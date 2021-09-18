@@ -1,8 +1,13 @@
 @charset "UTF-8";
 @font-face {
   font-weight: normal;
-  font-family: "Long Cang";
-  src: local("Long Cang"), url("../../lib/Long_Cang/LongCang-Regular.ttf") format("truetype"); }
+  font-family: "BebasNeue-Regular";
+  src: local("BebasNeue-Regular"), url("fonts/BebasNeue-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-weight: normal;
+  font-family: "Aphont-nv0V";
+  src: local("Aphont-nv0V"), url("fonts/Aphont-nv0V.ttf") format("truetype"); }
 
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -410,10 +415,10 @@ template {
 
 body {
   font-size: 16px;
-  font-family: "Long Cang", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Aphont-nv0V", "Arial", "Source Sans Pro";
   color: #555;
   line-height: 2;
-  background-color: #fefefe;
+  background-color: #F8F8F8;
   border-top: 5px solid #1F3696; }
   @media screen and (max-width: 960px) {
     body {
@@ -426,7 +431,7 @@ body {
 
 h1 {
   font-size: 22px;
-  font-family: "Long Cang", Athelas, STHeiti, Microsoft Yahei, serif; }
+  font-family: "Aphont-nv0V", "Arial", "Source Sans Pro"; }
 
 @media screen and (max-width: 960px) {
   h1 {
@@ -434,7 +439,7 @@ h1 {
 
 h2 {
   font-size: 20px;
-  font-family: "Long Cang", Athelas, STHeiti, Microsoft Yahei, serif; }
+  font-family: "Aphont-nv0V", "Arial", "Source Sans Pro"; }
 
 @media screen and (max-width: 960px) {
   h2 {
@@ -442,7 +447,7 @@ h2 {
 
 h3 {
   font-size: 18px;
-  font-family: "Long Cang", Athelas, STHeiti, Microsoft Yahei, serif; }
+  font-family: "Aphont-nv0V", "Arial", "Source Sans Pro"; }
 
 @media screen and (max-width: 960px) {
   h3 {
@@ -450,7 +455,7 @@ h3 {
 
 h4 {
   font-size: 16px;
-  font-family: "Long Cang", Athelas, STHeiti, Microsoft Yahei, serif; }
+  font-family: "Aphont-nv0V", "Arial", "Source Sans Pro"; }
 
 @media screen and (max-width: 960px) {
   h4 {
@@ -458,7 +463,7 @@ h4 {
 
 h5 {
   font-size: 14px;
-  font-family: "Long Cang", Athelas, STHeiti, Microsoft Yahei, serif; }
+  font-family: "Aphont-nv0V", "Arial", "Source Sans Pro"; }
 
 @media screen and (max-width: 960px) {
   h5 {
@@ -466,7 +471,7 @@ h5 {
 
 h6 {
   font-size: 12px;
-  font-family: "Long Cang", Athelas, STHeiti, Microsoft Yahei, serif; }
+  font-family: "Aphont-nv0V", "Arial", "Source Sans Pro"; }
 
 @media screen and (max-width: 960px) {
   h6 {
@@ -490,22 +495,25 @@ a {
 .nav {
   height: 50px; }
   .nav .nav-bar {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
     height: 50px;
-    background-color: #fefefe;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1); }
-    .nav .nav-bar .title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 50px;
-      font-weight: 600;
-      font-size: 20px; }
+    background-color: #F8F8F8;
+    color: #1d1d1d;
+    box-shadow: none; }
+    @supports (display: flex) {
+      .nav .nav-bar .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        font-weight: 600;
+        font-size: 20px; }
+      .nav .nav-bar .title a:hover {
+        color: #1d1d1d; } }
     .nav .nav-bar .menu-controller {
       position: absolute;
       right: 0;
@@ -520,7 +528,7 @@ a {
         margin-top: -1px;
         width: 20px;
         height: 2px;
-        background-color: #1F3696;
+        background-color: #1d1d1d;
         transition: transform 0.3s; }
         .nav .nav-bar .menu-controller span:first-child {
           transform: translateY(6px) rotate(0deg); }
@@ -537,6 +545,9 @@ a {
     @media screen and (max-width: 960px) {
       .nav .nav-bar {
         display: block; } }
+    @media screen and (min-width: 960px) {
+      .nav .nav-bar {
+        display: block; } }
   .nav .menu {
     position: fixed;
     top: 50px;
@@ -548,12 +559,12 @@ a {
     background-color: #fefefe;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    list-style: none; }
-    .nav .menu li {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 40px; }
+    list-style: none;
+    color: #1d1d1d li;
+      color-display: flex;
+      color-align-items: center;
+      color-justify-content: center;
+      color-height: 40px; }
     @media screen and (max-width: 960px) {
       .nav .menu {
         top: 0;

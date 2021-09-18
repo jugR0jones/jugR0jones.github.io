@@ -1,4 +1,9 @@
 @font-face {
   font-weight: normal;
-  font-family: "Long Cang";
-  src: local("Long Cang"), url("../../lib/Long_Cang/LongCang-Regular.ttf") format("truetype"); }
+  font-family: "BebasNeue-Regular";
+  src: local("BebasNeue-Regular"), url("fonts/BebasNeue-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-weight: normal;
+  font-family: "Aphont-nv0V";
+  src: local("Aphont-nv0V"), url("fonts/Aphont-nv0V.ttf") format("truetype"); }
