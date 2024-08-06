@@ -8,10 +8,9 @@
 		<meta name="description" content="">
 		<meta name="author" content="Graeme McIntosh">
 
-		<title>Graeme McIntosh</title>
+		<title>Graeme McIntosh - Posts</title>
 
 		<link rel="canonical" href="https://jugr0jones.github.io">
-	
 
 		<!-- <link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"> -->
@@ -115,7 +114,7 @@
 		<!-- <link href="blog.css" rel="stylesheet"> -->
 	  </head>
 
-	<body onload="onLoad()">
+	<body>
 		<div class="container">
 			<header class="border-bottom lh-1 py-3">
 			  <div class="row flex-nowrap justify-content-between align-items-center">
@@ -129,41 +128,17 @@
 			  </div>
 			</header>
 		  
-			<div id="menu">
+			<div class="nav-scroller py-1 mb-3 border-bottom">
+			  <nav class="nav nav-underline justify-content-between">
+				<a class="nav-item nav-link link-body-emphasis active" href="index.html">Home</a>
+				<a class="nav-item nav-link link-body-emphasis" href="#">Links</a>
+				<a class="nav-item nav-link link-body-emphasis" href="posts.html">Posts</a>
+				<a class="nav-item nav-link link-body-emphasis" href="#">Projects</a>
+			  </nav>
 			</div>
-		</div>
+		  </div>
 
 		<!-- Scripts -->
 		<script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
-		<script>
-
-			function onLoad() {
-				fetchMenu();
-			}
-
-			async function fetchMenu() {
-				const url = "menu.html";
-				try {
-    				const response = await fetch(
-						url, 
-						{
-							method: "GET",
-							headers: {
-    							"Content-Type": "text/html",
-			  				},
-						});
-    				if (!response.ok) {
-      					throw new Error(`Response status: ${response.status}`);
-    				}
-
-					const menuHtml = await response.text();
-					document.getElementById("menu").innerHTML = menuHtml;
-
-			 	 	} catch (error) {
-    					console.error(error.message);
-					}
-			}
-
-		</script>
 	</body>
 </html>

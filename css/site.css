@@ -1,0 +1,15 @@
+@font-face {
+    font-family: openDyslexic;
+    src: url(fonts/OpenDyslexic-Regular.woff2);
+  }
+
+  @font-face {
+    font-family: openDyslexic_Bold;
+    src: url(fonts/OpenDyslexic-Bold.woff2);
+    font-weight: bold;
+  }
+  
+  body {
+    font-family: myFirstFont;
+    text-transform: uppercase;
+  }
