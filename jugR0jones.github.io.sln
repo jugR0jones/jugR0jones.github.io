@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jugR0jones.github.io", "jugR0jones.github.io\jugR0jones.github.io.csproj", "{B1B58FB6-F7E7-4766-83EB-8E316A275157}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metalsharp.LiquidTemplates", "Metalsharp.LiquidTemplates\Metalsharp.LiquidTemplates\Metalsharp.LiquidTemplates.csproj", "{2F5F19AE-87DB-4FC6-8FFF-A7CEE6D9D895}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Source", "Source\Source.csproj", "{C57D26C9-F6E4-4B76-94B3-2519DC3C6925}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,13 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B1B58FB6-F7E7-4766-83EB-8E316A275157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B1B58FB6-F7E7-4766-83EB-8E316A275157}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B1B58FB6-F7E7-4766-83EB-8E316A275157}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B1B58FB6-F7E7-4766-83EB-8E316A275157}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F5F19AE-87DB-4FC6-8FFF-A7CEE6D9D895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2F5F19AE-87DB-4FC6-8FFF-A7CEE6D9D895}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F5F19AE-87DB-4FC6-8FFF-A7CEE6D9D895}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F5F19AE-87DB-4FC6-8FFF-A7CEE6D9D895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C57D26C9-F6E4-4B76-94B3-2519DC3C6925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C57D26C9-F6E4-4B76-94B3-2519DC3C6925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C57D26C9-F6E4-4B76-94B3-2519DC3C6925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C57D26C9-F6E4-4B76-94B3-2519DC3C6925}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
