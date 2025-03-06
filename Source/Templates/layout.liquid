@@ -1,0 +1,145 @@
+{% assign directoryPrefix = "" %}
+{% for i in (1..level) %}
+    {% assign directoryPrefix = directoryPrefix | append: "../" %}
+{% endfor %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content="Ian Wold is a Software Engineer, Architect, and Team Leader in Minneapolis.">
+    <meta name=”robots” content="index, follow">
+    <meta name="google-site-verification" content="bnAFrga8yOgj-ZnQFrYEjV-geaJn-WHjeDg6WZkzoAc" />
+    <meta name="msvalidate.01" content="3BFFA0F7DF4045C0DF2CBCB917387111" />
+
+    <link rel="stylesheet" href="{{ directoryPrefix }}site.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% if fontRequirement == "index" %}
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap&text=AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789%21%40%23%24%25%5E%26%2A%28%29%22%3B%3A%2C.%2F%3F%2B-%3D" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap&text=GRAEME%20MCINTOSH" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap&text=.0123456789" rel="stylesheet">
+    {% elsif fontRequirement == "page" %}
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap&text=AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789%21%40%23%24%25%5E%26%2A%28%29%22%3B%3A%2C.%2F%3F%2B-%3D" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap&text=GRAEME%20MCINTOSH" rel="stylesheet">
+    {% else %}
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&family=Source+Code+Pro:wght@400&family=Vollkorn:wght@400;700&display=swap" rel="stylesheet">
+    {% endif %}
+
+<!--    <link rel="webmention" href="https://webmention.io/ian.wold.guru/webmention" /> -->
+
+    {% if includeCanonicalIndex %}
+        <link rel="canonical" href="https://jugR0jones.github.io/" />
+    {% endif %}
+
+    <title>
+        Graeme McIntosh{% if title != "" %} | {{ title }} {% endif %}
+    </title>
+
+    {% if structuredData != "" %}
+        <script type="application/ld+json">
+				{{ structuredData }}
+			</script>
+    {% endif %}
+
+   <!-- <script defer src="https://umami-production-2e18.up.railway.app/script.js" data-website-id="df5b434a-847c-4372-88d4-33bc64349044"></script>-->
+</head>
+<body>
+<button id="dark-mode-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button>
+
+<header>
+    <img src="{{ directoryPrefix }}images/avatar.jpg" alt="Avatar" class="avatar" />
+    <a href="https://jugR0jones.github.io/" class="h-card" rel="me">Graeme McIntosh</a>
+    <nav>
+        <ul>
+            <li><a {% if highlight == "about" %} class="highlight" {% endif %} href="{{ directoryPrefix }}about.html">About</a></li>
+            <li><a {% if highlight == "now" %} class="highlight" {% endif %} href="{{ directoryPrefix }}now.html">Now</a></li>
+            <li><a {% if highlight == "connect" %} class="highlight" {% endif %} href="{{ directoryPrefix }}connect.html">Connect</a></li>
+         <!--   <li><a href="https://buttondown.email/ianwold" target="_blank">Book Club</a></li> -->
+        </ul>
+    </nav>
+</header>
+<main>
+    {{ content | raw }}
+</main>
+<footer>
+    <section>
+				<span>
+					Copyright © Ian Wold. Built with <a href="https://www.github.com/IanWold/Metalsharp">Metalsharp</a>, <a href="https://torchlight.dev">Torchlight</a>, and <a href="https://ian.wold.guru/built_with.html">many more cool things</a>.
+				</span>
+        <ul>
+            <li><a href="https://github.com/ianwold" rel="me"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></li>
+            <li><a href="mailto:ian@wold.guru?subject=Hello" rel="me"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a></li>
+            <li><a href="https://ko-fi.com/ianwold" target="_blank" rel="me"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-coffee"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg></a></li>
+            <li><a href="https://buttondown.email/ianwold" target="_blank" rel="me"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></a></li>
+            <li><a href="https://ian.wold.guru/feed.xml" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></li>
+        </ul>
+    </section>
+</footer>
+
+<script>
+    {% if removeScrollspy != true %}
+    window.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                let classList = document.querySelector(`main nav li a[href="#${id}"]`).parentElement.classList;
+
+                if (entry.intersectionRatio > 0) {
+                    classList.add('active');
+                } else {
+                    classList.remove('active');
+                }
+            });
+        });
+
+        document.querySelectorAll('section[id]').forEach((section) => {
+            observer.observe(section);
+        });
+    });
+    {% endif %}
+
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const body = document.body;
+
+    function toggleDarkMode() {
+        body.classList.toggle("dark");
+        let giscusTheme = "light";
+
+        if (localStorage.getItem("dark") === "enabled") {
+            localStorage.setItem("dark", "disabled");
+        } else {
+            localStorage.setItem("dark", "enabled");
+            giscusTheme = "dark";
+        }
+
+        function sendMessage(message) {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe)
+            {
+                return;
+            }
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+
+        sendMessage({
+            setConfig: {
+                theme: giscusTheme
+            }
+        });
+    }
+
+    darkModeToggle.addEventListener("click", toggleDarkMode);
+
+    if (localStorage.getItem("dark") === "enabled") {
+        body.classList.toggle("dark");
+    }
+</script>
+<script>
+    /*! instant.page v5.2.0 - (C) 2019-2023 Alexandre Dieulot - https://instant.page/license */
+    let t,e,n,o,i,a=null,s=65,c=new Set;const r=1111;function d(t){o=performance.now();const e=t.target.closest("a");m(e)&&p(e.href,"high")}function u(t){if(performance.now()-o<r)return;if(!("closest"in t.target))return;const e=t.target.closest("a");m(e)&&(e.addEventListener("mouseout",f,{passive:!0}),i=setTimeout(()=>{p(e.href,"high"),i=void 0},s))}function l(t){const e=t.target.closest("a");m(e)&&p(e.href,"high")}function f(t){t.relatedTarget&&t.target.closest("a")==t.relatedTarget.closest("a")||i&&(clearTimeout(i),i=void 0)}function h(t){if(performance.now()-o<r)return;const e=t.target.closest("a");if(t.which>1||t.metaKey||t.ctrlKey)return;if(!e)return;e.addEventListener("click",function(t){1337!=t.detail&&t.preventDefault()},{capture:!0,passive:!1,once:!0});const n=new MouseEvent("click",{view:window,bubbles:!0,cancelable:!1,detail:1337});e.dispatchEvent(n)}function m(o){if(o&&o.href&&(!n||"instant"in o.dataset)){if(o.origin!=location.origin){if(!(e||"instant"in o.dataset)||!a)return}if(["http:","https:"].includes(o.protocol)&&("http:"!=o.protocol||"https:"!=location.protocol)&&(t||!o.search||"instant"in o.dataset)&&!(o.hash&&o.pathname+o.search==location.pathname+location.search||"noInstant"in o.dataset))return!0}}function p(t,e="auto"){if(c.has(t))return;const n=document.createElement("link");n.rel="prefetch",n.href=t,n.fetchPriority=e,n.as="document",document.head.appendChild(n),c.add(t)}!function(){if(!document.createElement("link").relList.supports("prefetch"))return;const o="instantVaryAccept"in document.body.dataset||"Shopify"in window,i=navigator.userAgent.indexOf("Chrome/");i>-1&&(a=parseInt(navigator.userAgent.substring(i+"Chrome/".length)));if(o&&a&&a<110)return;const c="instantMousedownShortcut"in document.body.dataset;t="instantAllowQueryString"in document.body.dataset,e="instantAllowExternalLinks"in document.body.dataset,n="instantWhitelist"in document.body.dataset;const r={capture:!0,passive:!0};let f=!1,v=!1,g=!1;if("instantIntensity"in document.body.dataset){const t=document.body.dataset.instantIntensity;if(t.startsWith("mousedown"))f=!0,"mousedown-only"==t&&(v=!0);else if(t.startsWith("viewport")){const e=navigator.connection&&navigator.connection.saveData,n=navigator.connection&&navigator.connection.effectiveType&&navigator.connection.effectiveType.includes("2g");e||n||("viewport"==t?document.documentElement.clientWidth*document.documentElement.clientHeight<45e4&&(g=!0):"viewport-all"==t&&(g=!0))}else{const e=parseInt(t);isNaN(e)||(s=e)}}v||document.addEventListener("touchstart",d,r);f?c||document.addEventListener("mousedown",l,r):document.addEventListener("mouseover",u,r);c&&document.addEventListener("mousedown",h,r);if(g){let t=window.requestIdleCallback;t||(t=(t=>{t()})),t(function(){const t=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){const n=e.target;t.unobserve(n),p(n.href)}})});document.querySelectorAll("a").forEach(e=>{m(e)&&t.observe(e)})},{timeout:1500})}}();
+</script>
+</body>
+</html>

@@ -8,4 +8,42 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Static\images\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Metalsharp" Version="0.9.0-rc.6" />
+      <PackageReference Include="Metalsharp.SimpleBlog" Version="0.9.0-rc.2" />
+      <PackageReference Include="System.ServiceModel.Syndication" Version="10.0.0-preview.1.25080.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Metalsharp.LiquidTemplates\Metalsharp.LiquidTemplates\Metalsharp.LiquidTemplates.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="Config\**\*"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+        <None Update="Site\**\*"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+        <None Update="Static\**\*"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+        <None Update="Templates\**\*"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+    </ItemGroup>
+
+    <Target Name="GenerateCsxFile" AfterTargets="Build">
+        <ItemGroup>
+            <SourceFiles Include="Program.cs" />
+        </ItemGroup>
+
+        <Copy SourceFiles="@(SourceFiles)" DestinationFolder="$(OutputPath)" />
+
+        <WriteLinesToFile File="build.csx" Overwrite="true"
+                          Lines="
+#! &quot;net8.0&quot;
+#r &quot;nuget: Metalsharp, 0.9.0-rc.6&quot;
+#r &quot;nuget: Metalsharp.LiquidTemplates, 0.9.0-rc.5&quot;
+#r &quot;nuget: Metalsharp.SimpleBlog, 0.9.0-rc.2&quot;
+#r &quot;nuget: System.ServiceModel.Syndication, 8.0.0&quot;"/>
+
+        <Exec Command="type @(SourceFiles) >> build.csx" />
+    </Target>
 </Project>

@@ -1,0 +1,56 @@
+{% assign directoryPrefix = "" %}
+{% for i in (1..level) %}
+    {% assign directoryPrefix = directoryPrefix | append: "../" %}
+{% endfor %}
+
+{% assign years = posts | map: "year" | uniq | sort | reverse %}
+
+{% assign hidePastArticles = hidePastArticles | default: false %}
+
+{% if series or topic %}
+    <header>
+        {% if series %}
+            <h1>{{ series }}</h1>
+            <h2>Series Archive</h2>
+        {% elsif topic %}
+            <h1>Topic: {{ topic }}</h1>
+        {% endif %}
+    </header>
+
+    <section>
+        {% if series %}
+            <aside>{{ seriesDescription | raw }}</aside>
+        {% endif %}
+    </section>
+{% else %}
+    <h1 style="display: none;">A blog about software engineering and architecture.</h1>
+{% endif %}
+
+{% for year in years %}
+    {% assign intYear = year | plus: 0 %}
+    {% if hidePastArticles == false or intYear > 2020 %}
+        <section id="{{ year }}">
+            {% if years.size > 1 %}
+                <h2>{{ year }}</h2>
+            {% endif %}
+            <ul>
+                {% assign postsForYear = posts | where: "year", year %}
+                {% for post in postsForYear %}
+                    <li>
+                        <time>{{ post.month }}.{{ post.day }}</time>
+                        <a href="{{ directoryPrefix }}Posts/{{ post.fileName }}.html">
+                            <h3>{{ post.title }}</h3>
+                            <small>{{ post.description }}</small>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% endif %}
+{% endfor %}
+
+{% if hidePastArticles %}
+    <section>
+        <small>Looking for an earlier article? All of my past articles are <a href="https://ian.wold.guru/Series/past_articles.html">archived here</a>.</small>
+    </section>
+{% endif %}
