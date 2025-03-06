@@ -1,0 +1,3 @@
+[submodule "Metalsharp.LiquidTemplates"]
+	path = Metalsharp.LiquidTemplates
+	url = https://github.com/IanWold/Metalsharp.LiquidTemplates.git
